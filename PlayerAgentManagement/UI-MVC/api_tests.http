@@ -1,0 +1,9 @@
+### Create New Agent
+POST https://localhost:7069/api/agents
+Content-Type: application/json
+
+{
+  "Name": "Sami Filjak",
+  "BirthDate": "2003-02-02",
+  "PhoneNumber": "0457382947"
+}

@@ -1,0 +1,24 @@
+﻿@using Microsoft.EntityFrameworkCore.Infrastructure
+@model IEnumerable<PlayerAgentManagement.BL.Domain.Contract>
+
+<table class="table">
+    
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Founded</th>
+        <th>Country</th>
+        <th>Details</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var contract in Model)
+        {
+            <tr>
+                <td>@contract.Team.Name</td>
+                <td>@contract.Team.Founded.ToShortDateString()</td>
+                <td>@contract.Team.Country</td>
+                <td><a asp-controller="Team" asp-action="Details" asp-route-id="@contract.Team.Id">Details</a></td>
+            </tr>
+        }
+</table>

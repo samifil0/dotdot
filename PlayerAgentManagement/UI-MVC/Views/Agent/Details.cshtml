@@ -1,0 +1,26 @@
+﻿@model PlayerAgentManagement.BL.Domain.Agent
+
+@{
+    ViewBag.Title = "Agent details";
+    Layout = "_Layout";
+}
+
+<h2>Agent details</h2>
+
+<section class="my-3">
+    <div class="mb-3 row">
+        <label for="name-label" class="col-sm-2 fw-bold">Name</label>
+        <span id="name-label" class="col-sm-10">@Model.Name</span>
+    </div>
+    <div class="mb-3 row">
+        <label for="birthdate-label" class="col-sm-2 fw-bold">BirthDate</label>
+        <span id="birthdate-label" class="col-sm-10">@Model.BirthDate.ToShortDateString()</span>
+    </div>
+    <div class="mb-3 row">
+        <label for="position-label" class="col-sm-2 fw-bold">Phone Number</label>
+        <span id="position-label" class="col-sm-10">@Model.PhoneNumber</span>
+    </div>
+</section>
+
+
+<partial name="_PlayerOverview" model="Model.Players" />

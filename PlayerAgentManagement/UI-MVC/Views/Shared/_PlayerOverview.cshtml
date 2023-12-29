@@ -1,0 +1,25 @@
+﻿@model IEnumerable<PlayerAgentManagement.BL.Domain.Contract>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Birth date</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th>Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var contract in Model)
+    {
+        <tr>
+            <td>@contract.Player.Name</td>
+            <td>@contract.Player.BirthDate.ToShortDateString()</td>
+            <td>@contract.Player.Position</td>
+            <td>@contract.Player.Salary</td>
+            <td><a asp-controller="Player" asp-action="Details" asp-route-id="@contract.Player.Id">Details</a></td>
+        </tr>
+    }
+    </tbody>
+</table>

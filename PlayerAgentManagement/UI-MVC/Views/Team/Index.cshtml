@@ -1,0 +1,27 @@
+﻿@using PlayerAgentManagement.BL.Domain
+@model IEnumerable<PlayerAgentManagement.BL.Domain.Team>
+
+@{
+    ViewBag.Title = "All Teams";
+    Layout = "_Layout";
+}
+
+<h2>All Teams</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Founded</th>
+        <th>Country</th>
+        <th>Details</th>
+    </tr>
+    </thead>
+    <tbody id="teamTableBody">
+
+    </tbody>
+</table>
+
+<button class="btn btn-primary" type="button" id="refreshButton">Refresh</button>
+
+<script src="~/js/team/index.js"></script>

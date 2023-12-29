@@ -1,0 +1,32 @@
+﻿@using PlayerAgentManagement.BL.Domain
+@model IEnumerable<PlayerAgentManagement.BL.Domain.Player>
+
+@{
+    ViewBag.Title = "All Players";
+    Layout = "_Layout";
+}
+
+<h2>All Players</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Birth date</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (Player player in Model)
+    {
+        <tr>
+            <td>@player.Name</td>
+            <td>@player.BirthDate.ToShortDateString()</td>
+            <td>@player.Position</td>
+            <td>@player.Salary</td>
+            <td><a asp-controller="Player" asp-action="Details" asp-route-id="@player.Id">Details</a></td>
+        </tr>
+    }
+</table>
